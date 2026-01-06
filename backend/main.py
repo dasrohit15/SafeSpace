@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 #from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import uvicorn
+#import uvicorn
 
 from ai_agent import graph, SYSTEM_PROMPT, parse_response
 
@@ -29,9 +29,5 @@ async def ask(query: Query):
             "tool_called": tool_called_name}
 
 
-#if __name__ == "__main__":
-    #uvicorn.run("main:app", host="127.0.0.1", #port=8000, reload=True)
-
-@app.get("/")
-def root():
-    return {"message": "SafeSpace backend is running!"}
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
