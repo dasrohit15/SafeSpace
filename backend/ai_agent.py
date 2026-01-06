@@ -1,5 +1,5 @@
 from langchain.tools import tool
-from backend.tools import query_medgemma, call_emergency
+from tools import query_medgemma, call_emergency
 
 @tool
 def ask_mental_health_specialist(query: str) -> str:
@@ -42,7 +42,7 @@ def find_nearby_therapists_by_location(location: str) -> str:
 # Step1: Create an AI Agent & Link to backend
 from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
-from backend.config import OPENROUTER_API_KEY
+from config import OPENROUTER_API_KEY
 
 tools = [ask_mental_health_specialist,
     emergency_call_tool,find_nearby_therapists_by_location]
