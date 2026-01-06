@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 #from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-#import uvicorn
+import uvicorn
 
 from ai_agent import graph, SYSTEM_PROMPT, parse_response
 
