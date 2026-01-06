@@ -2,11 +2,11 @@
 from fastapi import FastAPI
 #from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import uvicorn
+#import uvicorn
 
 from ai_agent import graph, SYSTEM_PROMPT, parse_response
 
-app = FastAPI()
+app = FastAPI(title="SafeSpace AI Therapist Backend")
 
 
 # Step2: Receive and validate request from Frontend
@@ -29,5 +29,5 @@ async def ask(query: Query):
             "tool_called": tool_called_name}
 
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+#if __name__ == "__main__":
+    #uvicorn.run("main:app", host="127.0.0.1", #port=8000, reload=True)
